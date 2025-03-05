@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tom Fisher | Principal Consultant at Tack Iron</title>
+    <meta name="description" content="Tom Fisher brings 25+ years of executive experience in operations and technology to help businesses transform, scale, and execute critical initiatives.">
+    <meta name="keywords" content="Tom Fisher, business consultant, executive experience, digital transformation, operational excellence, strategic execution, leadership">
+    <meta name="author" content="Tom Fisher">
+    <link rel="canonical" href="https://tackiron.com/about-tom.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="profile">
+    <meta property="og:url" content="https://tackiron.com/about-tom.html">
+    <meta property="og:title" content="Tom Fisher | Principal Consultant at Tack Iron">
+    <meta property="og:description" content="25+ years of executive experience helping businesses transform, scale, and execute critical initiatives.">
+    <meta property="og:image" content="https://tackiron.com/images/tom-fisher.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://tackiron.com/about-tom.html">
+    <meta property="twitter:title" content="Tom Fisher | Principal Consultant at Tack Iron">
+    <meta property="twitter:description" content="25+ years of executive experience helping businesses transform, scale, and execute critical initiatives.">
+    <meta property="twitter:image" content="https://tackiron.com/images/tom-fisher.jpg">
+    
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        .bio-section {
+            padding: 6rem 0;
+            background-color: #f9f9f9;
+        }
+        
+        .bio-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            align-items: flex-start;
+        }
+        
+        .bio-image {
+            flex: 1;
+            min-width: 300px;
+            max-width: 400px;
+        }
+        
+        .bio-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .bio-details {
+            flex: 2;
+            min-width: 300px;
+        }
+        
+        .bio-name {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .bio-title {
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+        
+        .bio-location {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+        }
+        
+        .bio-location i {
+            margin-right: 0.5rem;
+            color: var(--secondary-color);
+        }
+        
+        .bio-text {
+            margin-bottom: 2rem;
+        }
+        
+        .bio-connect {
+            margin-top: 2rem;
+        }
+        
+        .bio-connect h3 {
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            color: var(--primary-color);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--secondary-color);
+            border-radius: 50%;
+            color: white;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+        
+        .expertise-section {
+            padding: 5rem 0;
+        }
+        
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .expertise-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: var(--box-shadow);
+            padding: 2rem;
+            transition: var(--transition);
+        }
+        
+        .expertise-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .expertise-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--secondary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .expertise-icon i {
+            font-size: 1.5rem;
+        }
+        
+        .expertise-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        @media (max-width: 768px) {
+            .bio-content {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            
+            .bio-location {
+                justify-content: center;
+            }
+            
+            .social-links {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>TACK IRON</h1>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="about-tom.html" class="active">Tom Fisher</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="bio-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>About Tom Fisher</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="bio-content">
+                <div class="bio-image">
+                    <img src="images/tom-fisher.jpg" alt="Tom Fisher - Principal Consultant at Tack Iron with 25 years of executive experience" style="width: 100%; object-fit: cover;">
+                </div>
+                <div class="bio-details">
+                    <h1 class="bio-name">Tom Fisher</h1>
+                    <div class="bio-title">Principal Consultant, Tack Iron</div>
+                    <div class="bio-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Carmel, Indiana</span>
+                    </div>
+                    <div class="bio-text">
+                        <h3>Professional Experience</h3>
+                        
+                        <h4>Principal at Tack Iron, LLC (Apr 2022 - Present)</h4>
+                        <p>With over 25 years of experience in the CX and Automotive industries with roles spanning operations and technology, I bring a wealth of knowledge to every client engagement. Throughout my career leading teams of thousands across multiple continents, I've developed a unique perspective on what makes projects succeed or fail.</p>
+                        <p>At Tack Iron, I leverage this extensive experience to provide personalized guidance to executives and their critical initiatives. I don't rely on junior consultants or large teams—clients work directly with me, benefiting from my decades of hands-on leadership experience in digital transformation, operational excellence, and strategic execution.</p>
+                        <p>My approach is straightforward: I apply the lessons learned from being in their shoes to help clients navigate complex challenges. Whether it's transforming a business unit, implementing new technology, or developing strategic initiatives, I bring battle-tested expertise that can only come from years of leading similar efforts at scale.</p>
+                    </div>
+                    <div class="bio-connect">
+                        <h3>Connect with Tom</h3>
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/tomfisher/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="mailto:info@tackiron.com" title="Email"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="expertise-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Areas of Expertise</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="expertise-grid">
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Business Strategy</h3>
+                    <p>At OPENLANE, I transformed the TradeRev marketplace by refocusing its strategy on core Canadian markets rather than pursuing aggressive territory expansion. This strategic pivot turned a business unit with years of negative EBITDA into a profitable operation generating over $3M within 12 months. My approach to business strategy centers on identifying core strengths and aligning resources to maximize impact rather than diluting efforts across too many initiatives.</p>
+                </div>
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Operational Excellence</h3>
+                    <p>When faced with fragmented customer experiences across 19 different organizations at OPENLANE, I led the consolidation into a unified customer experience team. This transformation allowed customers to interact seamlessly with all companies under the OPENLANE umbrella, significantly improving satisfaction metrics. Similarly, I applied SaaS-based operating principles to traditional technology operations, increasing core platform uptime from 98% to 99.99%, demonstrating how operational excellence directly impacts customer experience.</p>
+                </div>
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Leadership Development</h3>
+                    <p>Drawing from my 25 years of executive experience, I bring a seasoned perspective to leadership challenges. At OPENLANE, I personally led the integration of 15 distinct technology teams representing more than 1,000 employees into a cohesive organization. This wasn't merely an organizational restructuring—it required identifying high-potential talent and creating opportunities for cross-functional leadership. This hands-on experience allows me to provide clients with practical leadership strategies that I've personally implemented and refined throughout my career.</p>
+                </div>
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3>Project Management</h3>
+                    <p>In 2020, I led one of the most challenging projects in OPENLANE's history—transitioning 100% of auctions from in-person events to fully digital experiences in just 4 weeks. This required taking an online marketplace from proof-of-concept to production under extreme time pressure. The project demanded precise coordination across technology, operations, and customer-facing teams, with no room for error as the business depended on its success. This experience exemplifies my approach to project management: clear goals, rapid execution, and unwavering focus on business-critical outcomes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="board-advisory-section" style="padding: 5rem 0; background-color: #f9f9f9;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Board and Advisory</h2>
+                <div class="underline"></div>
+            </div>
+            <div style="max-width: 800px; margin: 3rem auto;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                    <div style="background-color: white; border-radius: 8px; box-shadow: var(--box-shadow); padding: 2rem; transition: var(--transition);">
+                        <h3 style="color: var(--primary-color); margin-bottom: 1.5rem; font-size: 1.5rem;">Current Position</h3>
+                        <div style="margin-bottom: 1.5rem;">
+                            <h4 style="color: var(--secondary-color); margin-bottom: 0.5rem;">C3 Technologies</h4>
+                            <p style="font-style: italic; color: var(--text-light);">Advisory Board Member · Sep 2024 - Present</p>
+                        </div>
+                    </div>
+                    <div style="background-color: white; border-radius: 8px; box-shadow: var(--box-shadow); padding: 2rem; transition: var(--transition);">
+                        <h3 style="color: var(--primary-color); margin-bottom: 1.5rem; font-size: 1.5rem;">Previous Positions</h3>
+                        <div style="margin-bottom: 1.5rem;">
+                            <h4 style="color: var(--secondary-color); margin-bottom: 0.5rem;">Sharpen CX</h4>
+                            <p style="font-style: italic; color: var(--text-light);">Advisory Board Member · Dec 2018 - Dec 2022</p>
+                        </div>
+                        <div style="margin-bottom: 1.5rem;">
+                            <h4 style="color: var(--secondary-color); margin-bottom: 0.5rem;">TechPoint</h4>
+                            <p style="font-style: italic; color: var(--text-light);">Board of Directors · Oct 2017 - Dec 2022</p>
+                        </div>
+                        <div style="margin-bottom: 1.5rem;">
+                            <h4 style="color: var(--secondary-color); margin-bottom: 0.5rem;">Textel</h4>
+                            <p style="font-style: italic; color: var(--text-light);">Board Member · Jan 2021 - Dec 2022</p>
+                        </div>
+                        <div style="margin-bottom: 1.5rem;">
+                            <h4 style="color: var(--secondary-color); margin-bottom: 0.5rem;">Ascend Indiana</h4>
+                            <p style="font-style: italic; color: var(--text-light);">Board Member · Jan 2019 - Apr 2022</p>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--secondary-color); margin-bottom: 0.5rem;">IVY Tech Campus Board of Trustees</h4>
+                            <p style="font-style: italic; color: var(--text-light);">Mar 2020 - Dec 2021</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Schedule a consultation with Tom to discuss how his expertise can directly impact your most critical initiatives.</h2>
+                <a href="index.html#contact" class="btn btn-light">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>TACK IRON</h2>
+                    <p>Transforming businesses for tomorrow's success</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="index.html#home">Home</a></li>
+                            <li><a href="index.html#about">About</a></li>
+                            <li><a href="about-tom.html">Tom Fisher</a></li>
+                            <li><a href="index.html#services">Services</a></li>
+                            <li><a href="index.html#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="scaling-businesses.html">Scaling Businesses</a></li>
+                            <li><a href="strategic-project-execution.html">Strategic Project Execution</a></li>
+                            <li><a href="startup-growth-structure.html">Startup Growth Structure</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Connect</h3>
+                        <div class="social-icons">
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Tack Iron. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Structured Data for Person -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Tom Fisher",
+      "jobTitle": "Principal Consultant",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Tack Iron, LLC"
+      },
+      "description": "With over 25 years of executive experience spanning operations and technology, Tom Fisher brings a wealth of knowledge to every client engagement.",
+      "image": "https://tackiron.com/images/tom-fisher.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Carmel",
+        "addressRegion": "Indiana",
+        "addressCountry": "US"
+      },
+      "email": "info@tackiron.com",
+      "sameAs": [
+        "https://www.linkedin.com/in/tomfisher/"
+      ],
+      "knowsAbout": [
+        "Business Strategy",
+        "Operational Excellence",
+        "Leadership Development",
+        "Project Management",
+        "Digital Transformation"
+      ],
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "name": "C3 Technologies",
+          "roleName": "Advisory Board Member",
+          "startDate": "2024-09",
+          "endDate": "Present"
+        },
+        {
+          "@type": "Organization",
+          "name": "Sharpen CX",
+          "roleName": "Advisory Board Member",
+          "startDate": "2018-12",
+          "endDate": "2022-12"
+        },
+        {
+          "@type": "Organization",
+          "name": "TechPoint",
+          "roleName": "Board of Directors",
+          "startDate": "2017-10",
+          "endDate": "2022-12"
+        },
+        {
+          "@type": "Organization",
+          "name": "Textel",
+          "roleName": "Board Member",
+          "startDate": "2021-01",
+          "endDate": "2022-12"
+        },
+        {
+          "@type": "Organization",
+          "name": "Ascend Indiana",
+          "roleName": "Board Member",
+          "startDate": "2019-01",
+          "endDate": "2022-04"
+        },
+        {
+          "@type": "Organization",
+          "name": "IVY Tech Campus",
+          "roleName": "Board of Trustees",
+          "startDate": "2020-03",
+          "endDate": "2021-12"
+        }
+      ]
+    }
+    </script>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
