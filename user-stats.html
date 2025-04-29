@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Statistics | Tack Iron</title>
+    <meta name="description" content="Admin dashboard for Tack Iron website visitor statistics.">
+    <meta name="author" content="Tom Fisher">
+    
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header class="admin-header">
+        <div class="container">
+            <div class="logo">
+                <h1>TACK IRON</h1>
+                <span class="admin-badge">ADMIN</span>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Back to Site</a></li>
+                    <li><a href="#" id="logout-btn">Logout</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </header>
+
+    <section class="admin-dashboard">
+        <div class="container">
+            <div class="section-header">
+                <h2>Website Analytics Dashboard</h2>
+                <div class="underline"></div>
+                <p>Comprehensive visitor statistics and insights for the Tack Iron website.</p>
+            </div>
+            
+            <div class="date-filter">
+                <label for="date-range">Time Period:</label>
+                <select id="date-range">
+                    <option value="today">Today</option>
+                    <option value="yesterday">Yesterday</option>
+                    <option value="7days" selected>Last 7 Days</option>
+                    <option value="30days">Last 30 Days</option>
+                    <option value="90days">Last 90 Days</option>
+                    <option value="custom">Custom Range</option>
+                </select>
+                <div id="custom-date-range" style="display: none;">
+                    <input type="date" id="start-date">
+                    <input type="date" id="end-date">
+                    <button id="apply-date-range" class="btn btn-secondary">Apply</button>
+                </div>
+            </div>
+
+            <div class="stats-overview">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Total Page Views</h3>
+                        <p class="stat-number" id="total-pageviews">12,458</p>
+                        <p class="stat-change positive"><i class="fas fa-arrow-up"></i> 12.3% vs previous period</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Unique Visitors</h3>
+                        <p class="stat-number" id="unique-visitors">3,842</p>
+                        <p class="stat-change positive"><i class="fas fa-arrow-up"></i> 8.7% vs previous period</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Avg. Session Duration</h3>
+                        <p class="stat-number" id="avg-duration">3m 24s</p>
+                        <p class="stat-change positive"><i class="fas fa-arrow-up"></i> 5.2% vs previous period</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-percentage"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Bounce Rate</h3>
+                        <p class="stat-number" id="bounce-rate">42.8%</p>
+                        <p class="stat-change negative"><i class="fas fa-arrow-up"></i> 3.1% vs previous period</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="charts-grid">
+                <div class="chart-container">
+                    <h3>Traffic Over Time</h3>
+                    <canvas id="traffic-chart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h3>Top Pages</h3>
+                    <canvas id="pages-chart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h3>Traffic Sources</h3>
+                    <canvas id="sources-chart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h3>Device Breakdown</h3>
+                    <canvas id="devices-chart"></canvas>
+                </div>
+            </div>
+
+            <div class="data-tables">
+                <div class="data-table-container">
+                    <h3>Geographic Distribution</h3>
+                    <table class="data-table" id="geo-table">
+                        <thead>
+                            <tr>
+                                <th>Country</th>
+                                <th>Visitors</th>
+                                <th>% of Total</th>
+                                <th>Avg. Duration</th>
+                                <th>Bounce Rate</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>United States</td>
+                                <td>2,145</td>
+                                <td>55.8%</td>
+                                <td>3m 42s</td>
+                                <td>39.2%</td>
+                            </tr>
+                            <tr>
+                                <td>United Kingdom</td>
+                                <td>587</td>
+                                <td>15.3%</td>
+                                <td>3m 12s</td>
+                                <td>43.7%</td>
+                            </tr>
+                            <tr>
+                                <td>Canada</td>
+                                <td>312</td>
+                                <td>8.1%</td>
+                                <td>2m 58s</td>
+                                <td>45.1%</td>
+                            </tr>
+                            <tr>
+                                <td>Australia</td>
+                                <td>198</td>
+                                <td>5.2%</td>
+                                <td>3m 05s</td>
+                                <td>44.3%</td>
+                            </tr>
+                            <tr>
+                                <td>Germany</td>
+                                <td>156</td>
+                                <td>4.1%</td>
+                                <td>2m 47s</td>
+                                <td>48.2%</td>
+                            </tr>
+                            <tr>
+                                <td>Other</td>
+                                <td>444</td>
+                                <td>11.5%</td>
+                                <td>2m 32s</td>
+                                <td>52.6%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="data-table-container">
+                    <h3>Browser & OS Statistics</h3>
+                    <div class="tabs">
+                        <button class="tab-btn active" data-tab="browsers">Browsers</button>
+                        <button class="tab-btn" data-tab="operating-systems">Operating Systems</button>
+                    </div>
+                    <div class="tab-content active" id="browsers">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Browser</th>
+                                    <th>Users</th>
+                                    <th>% of Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Chrome</td>
+                                    <td>2,305</td>
+                                    <td>60.0%</td>
+                                </tr>
+                                <tr>
+                                    <td>Safari</td>
+                                    <td>768</td>
+                                    <td>20.0%</td>
+                                </tr>
+                                <tr>
+                                    <td>Firefox</td>
+                                    <td>384</td>
+                                    <td>10.0%</td>
+                                </tr>
+                                <tr>
+                                    <td>Edge</td>
+                                    <td>269</td>
+                                    <td>7.0%</td>
+                                </tr>
+                                <tr>
+                                    <td>Other</td>
+                                    <td>116</td>
+                                    <td>3.0%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="tab-content" id="operating-systems">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>OS</th>
+                                    <th>Users</th>
+                                    <th>% of Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Windows</td>
+                                    <td>1,729</td>
+                                    <td>45.0%</td>
+                                </tr>
+                                <tr>
+                                    <td>iOS</td>
+                                    <td>922</td>
+                                    <td>24.0%</td>
+                                </tr>
+                                <tr>
+                                    <td>macOS</td>
+                                    <td>768</td>
+                                    <td>20.0%</td>
+                                </tr>
+                                <tr>
+                                    <td>Android</td>
+                                    <td>346</td>
+                                    <td>9.0%</td>
+                                </tr>
+                                <tr>
+                                    <td>Linux</td>
+                                    <td>77</td>
+                                    <td>2.0%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="real-time-section">
+                <div class="section-header">
+                    <h2>Real-Time Activity</h2>
+                    <div class="underline"></div>
+                    <p>Current visitors and their activity on the website right now.</p>
+                </div>
+                
+                <div class="real-time-stats">
+                    <div class="real-time-card">
+                        <h3>Active Users</h3>
+                        <p class="real-time-number" id="active-users">14</p>
+                    </div>
+                    <div class="real-time-card">
+                        <h3>Page Views (Last 5 min)</h3>
+                        <p class="real-time-number" id="rt-pageviews">37</p>
+                    </div>
+                    <div class="real-time-card">
+                        <h3>Avg. Active Time</h3>
+                        <p class="real-time-number" id="rt-active-time">1m 42s</p>
+                    </div>
+                </div>
+                
+                <div class="real-time-table-container">
+                    <h3>Live User Activity</h3>
+                    <table class="data-table" id="real-time-table">
+                        <thead>
+                            <tr>
+                                <th>Page</th>
+                                <th>Users</th>
+                                <th>Country</th>
+                                <th>Device</th>
+                                <th>Time on Page</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>/index.html</td>
+                                <td>5</td>
+                                <td>Various</td>
+                                <td>3 Mobile, 2 Desktop</td>
+                                <td>1m 12s avg.</td>
+                            </tr>
+                            <tr>
+                                <td>/strategic-project-execution.html</td>
+                                <td>3</td>
+                                <td>US, UK, CA</td>
+                                <td>1 Mobile, 2 Desktop</td>
+                                <td>2m 34s avg.</td>
+                            </tr>
+                            <tr>
+                                <td>/scaling-businesses.html</td>
+                                <td>2</td>
+                                <td>US, DE</td>
+                                <td>2 Desktop</td>
+                                <td>3m 05s avg.</td>
+                            </tr>
+                            <tr>
+                                <td>/contact.html</td>
+                                <td>2</td>
+                                <td>US, AU</td>
+                                <td>1 Mobile, 1 Desktop</td>
+                                <td>1m 47s avg.</td>
+                            </tr>
+                            <tr>
+                                <td>/strategic-placement.html</td>
+                                <td>1</td>
+                                <td>US</td>
+                                <td>1 Desktop</td>
+                                <td>0m 58s</td>
+                            </tr>
+                            <tr>
+                                <td>/startup-growth-structure.html</td>
+                                <td>1</td>
+                                <td>CA</td>
+                                <td>1 Mobile</td>
+                                <td>1m 23s</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>TACK IRON</h3>
+                    <p>Admin Dashboard</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Tack Iron. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/admin.js"></script>
+    <script src="js/stats-dashboard.js"></script>
+</body>
+</html>
